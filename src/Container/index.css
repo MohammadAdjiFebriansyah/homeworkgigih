@@ -1,0 +1,18 @@
+.center p{
+    color: white;
+}
+
+.btn-login{
+    text-align: center;
+    justify-content: center;
+}
+
+.content p {
+    color: white;
+    margin-left: 20px;
+}
+
+.tracks p{
+    color: black;
+    margin-left: 0;
+}
