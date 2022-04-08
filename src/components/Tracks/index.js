@@ -3,8 +3,8 @@ import './index.css';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
-export default function Track({ imageUrl, title, artist, toggleSelect }) {
-  const [isSelected, setIsSelected] = useState(false);
+export default function Track({ imageUrl, title, artist, select, toggleSelect }) {
+  const [isSelected, setIsSelected] = useState(select);
 
   const handleToggleSelect = () => {
     setIsSelected(!isSelected);
