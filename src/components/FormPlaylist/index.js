@@ -109,6 +109,7 @@ export default function FormPlaylist({ uriTracks }) {
               error={errorForm.title}
               required
               style={{ borderRadius: 8 }}
+              data-testid="title-playlist"
             />
             </InputGroup>
           </FormControl>
@@ -126,11 +127,11 @@ export default function FormPlaylist({ uriTracks }) {
               required
               error={errorForm.description}
               style={{ borderRadius: 8 }}
-              
+              data-testid="description-playlist"
             />
             </InputGroup>
           </FormControl>
-          <Button ml="5" mb="3" width='90%' colorScheme='green' variant="solid" style={{ borderRadius: 8 }}  >Create</Button>
+          <Button ml="5" mb="3" width='90%' colorScheme='green' variant="solid" style={{ borderRadius: 8 }} data-testid="btn-create-playlist" >Create</Button>
         </form>
       </Box>
     </Center>

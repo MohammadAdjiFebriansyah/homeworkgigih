@@ -14,11 +14,11 @@ export default function Track({ imageUrl, title, artist, select, toggleSelect })
   return (
     <div className="song">
       <div className="songImage">
-        <img src={imageUrl} alt={title} />
+        <img src={imageUrl} alt={title} data-testid="track-img"/>
       </div>
 
       <div className="songData">
-          <h3 className="songTitle">{title}</h3>
+          <h3 className="songTitle" data-testid="track-img">{title}</h3>
           <p className="songArtist">{artist}</p>
       </div>
       <div className="songAction">
