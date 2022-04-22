@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import { useDocumentTitle } from '../lib/customHooks';
 import { getUserProfile } from '../lib/fetchApi';
 import { login } from '../TokenSlice';
+import config from '../lib/config';
 import LandingPage from '../assets/LandingPage.jpg';
 
 function Login() {
@@ -39,8 +40,9 @@ function Login() {
   }, [setLogin]);
 
   const getSpotifyLogin = () => {
+    const state = Date.now().toString();
     const clientId = 'c3674ca69601470ebbf98c96ec75c3bd';
-    return `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/`;
+    return `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=https://homeworkgigih.vercel.app/&state=${state}&scope=${config.SPOTIFY_SCOPE}`;
   }
 
   return (
