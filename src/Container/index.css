@@ -3,30 +3,36 @@ body{
 }
 
 .container{
-    width: 50%;
+    width: 40%;
 }
 
-.auth{
-    background-color: black;
-    height: 80px;
+.login{
+    background-color: rgb(15, 15, 15);
+    height: 550px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 20px;
-    margin: 10px auto;
+    margin: 30px auto;
     padding: 50px;
-    width: 50%;
+    width: 90%;
 }
 
-.auth p{
-    text-align: center;
+.login .titleHomePage h1{
+    margin-left: 50px;
     color: white;
+    font-weight: bold;
+    font-size: 50px;
 }
 
-.auth .btn-login{
-    text-align: center;
-    margin-right: 20px;
+.login .imageHomePage{
+    width: 30%;
+    margin-right: 50px;
+}
+
+.login .btn-login{
+    margin-left: 50px;
 }
 
 .content p {

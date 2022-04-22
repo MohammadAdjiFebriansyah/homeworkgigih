@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {Button} from '@chakra-ui/react';
 import './index.css';
 import PropTypes from 'prop-types';
@@ -8,7 +8,7 @@ import { searchTrack } from '../../lib/fetchApi.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../TokenSlice/index';
 
- export default function SearchBar({ onSuccess, onClearSearch }) {
+function SearchBar({ onSuccess, onClearSearch }) {
   const accessToken = useSelector((state) => state.auth.accessToken);
   const [text, setText] = useState('');
   const [isClear, setIsClear] = useState(true);
@@ -43,22 +43,21 @@ import { logout } from '../../TokenSlice/index';
   }
 
   return (
-    <div>
-      <h4>Search Song</h4>
-      <form className="form-search" onSubmit={handleSubmit}>
+    <div className='Search'>
+      <form className='formSearch' onSubmit={handleSubmit}>
         <Input
-          type="text"
-          placeholder="Search..."
-          className="form-search__input"
+          type='text'
+          placeholder='Search...'
+          className='formSearchInput'
           required
           value={text}
           onChange={handleInput}
         />
-        <Button mt='2' colorScheme='green' style={{ borderRadius: 8 }} type="submit">Search</Button>
+        <Button mt='2' colorScheme='green' style={{ borderRadius: 8 }} type='submit'>Search</Button>
       </form>
 
       {!isClear && (
-        <Button mb='2' ml='5' colorScheme='green' style={{ borderRadius: 8 }} onClick={handleClear} className="btn--clear">Clear search</Button>
+        <Button mb='2' ml='5' colorScheme='green' style={{ borderRadius: 8 }} onClick={handleClear} className='btn-clear'>Clear search</Button>
       )}
     </div>
   )
@@ -68,3 +67,5 @@ SearchBar.propTypes = {
   onSuccess: PropTypes.func.isRequired,
   onClearSearch: PropTypes.func.isRequired,
 };
+
+export default SearchBar;

@@ -1,17 +1,17 @@
-import React, { useCallback,useEffect } from 'react';
+import { useCallback,useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Button from '../components/Button';
 import { useDocumentTitle } from '../lib/customHooks';
 import { getUserProfile } from '../lib/fetchApi';
-import { login } from '../TokenSlice/index';
-import "./index.css"; 
+import { login } from '../TokenSlice';
+import LandingPage from '../assets/LandingPage.jpg';
 
-export default function Auth() {
+function Login() {
   const dispatch = useDispatch();
   const history = useHistory();
-  useDocumentTitle('Auth - Spotify');
+  useDocumentTitle('Login page - Spotify');
 
   const setLogin = useCallback(async (accessToken, expiresIn) => {
     try {
@@ -38,15 +38,22 @@ export default function Auth() {
     }
   }, [setLogin]);
 
-  const getSpotifyLinkAuthorize = () => {
-    const clientId = "c3674ca69601470ebbf98c96ec75c3bd";
+  const getSpotifyLogin = () => {
+    const clientId = 'c3674ca69601470ebbf98c96ec75c3bd';
     return `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000/`;
   }
 
   return (
-    <main className="auth">
-      <p>Login your account</p>
-      <Button className='btn-login' href={getSpotifyLinkAuthorize()} external>Login</Button>
+    <main className='login'>
+      <div className='titleHomePage'>
+        <h1>Spotify for<br/>everyone's music</h1>
+        <Button className='btn-login' href={getSpotifyLogin()} external>Login</Button>
+      </div>
+      <div className='imageHomePage'>
+        <img src={LandingPage} alt='t'/>
+      </div>
     </main>
   )
 } 
+
+export default Login;

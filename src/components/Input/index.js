@@ -1,20 +1,18 @@
-import React from 'react';
-import "./index.css";
+import './index.css';
 import PropTypes from 'prop-types'; 
 
 function ElementInput({ type, ...props }) {
   if (type === 'textarea') {
     return <textarea {...props} />
   }
-
   return <input type={type} {...props} />
 }
 
-export default function Input({ label, id, required, type, error, className, ...props }) {
+function Input({ label, id, required, type, error, className, ...props }) {
 
   const classInput = ['input'];
   if (type === 'textarea') {
-    classInput.push('input--large');
+    classInput.push('inputLarge');
   }
 
   if (className) {
@@ -37,7 +35,7 @@ export default function Input({ label, id, required, type, error, className, ...
         required={required}
         {...props}
       />
-      {error && <span className="inputGroupError">{error}</span>}
+      {error && <span className='inputGroupError'>{error}</span>}
     </>
   )
 }
@@ -60,3 +58,5 @@ Input.propTypes = {
   required: PropTypes.bool,
   className: PropTypes.string,
 }; 
+
+export default Input;

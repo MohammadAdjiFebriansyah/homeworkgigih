@@ -1,9 +1,9 @@
 import './App.css';
-import CreatePlaylist from './Container/CreatePlaylist';
+import HomePage from './container/CreatePlaylist';
 import { useLocation, Switch, Route } from 'react-router-dom';
-import Auth from './Container/Auth';
+import Auth from './container/Login';
 import GuardRoute from './components/GuardRoute';
-import NotFound from './Container/NotFound';
+import NotFound from './container/NotFound';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from './TokenSlice/index';
@@ -33,17 +33,17 @@ function App() {
   }, [accessTokenState, dispatch, location.pathname]);
   
   return (
-      <Switch>
-        <GuardRoute path="/create-playlist" type="private" exact>
-          <CreatePlaylist />
-        </GuardRoute>
-        <GuardRoute path="/" type="guest" exact>
-          <Auth />
-        </GuardRoute>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
+    <Switch>
+      <GuardRoute path='/' type='guest' exact>
+        <Auth />
+      </GuardRoute>
+      <GuardRoute path='/create-playlist' type='private' exact>
+        <HomePage />
+      </GuardRoute>
+      <Route path='*'>
+        <NotFound />
+      </Route>
+    </Switch>
   );
 }
 

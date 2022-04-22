@@ -24,7 +24,7 @@
     "framer-motion": "^6.2.10",
     "msw": "^0.39.2",
     "react": "^17.0.2",
-    "react-bootstrap": "^2.2.3",
+    "react-bootstrap": "^2.3.0",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.8",
     "react-router-dom": "^5.3.1",
@@ -57,5 +57,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "express": "^4.17.3",
+    "reinstall-node-modules": "^2.0.0"
   }
 }

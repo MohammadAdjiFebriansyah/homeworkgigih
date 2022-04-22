@@ -1,14 +1,13 @@
-import React from 'react';
 import './index.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 
-export default function Button({ children, type, variant, className, onClick, href, external, ...props }) {
+function Button({ children, type, variant, className, onClick, href, external, ...props }) {
   const classButton = ['btn'];
   
   if (variant !== 'primary') {
-    classButton.push(`btn--${variant}`);
+    classButton.push(`btn-${variant}`);
   }
 
   if (className !== '') {
@@ -16,7 +15,7 @@ export default function Button({ children, type, variant, className, onClick, hr
   }
 
   if (href) {
-    classButton.push('btn--link');
+    classButton.push('btn-link');
     if (external) {
       return (
         <a
@@ -28,7 +27,7 @@ export default function Button({ children, type, variant, className, onClick, hr
         </a>
       )
     }
-
+    
     return (
       <Link
         to={href}
@@ -39,7 +38,7 @@ export default function Button({ children, type, variant, className, onClick, hr
       </Link>
     )
   }
-
+  
   return (
     <button
       type={type}
@@ -68,3 +67,5 @@ Button.propTypes = {
   onClick: PropTypes.func,
   href: PropTypes.string,
 };
+
+export default Button;

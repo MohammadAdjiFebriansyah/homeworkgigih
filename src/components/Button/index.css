@@ -1,5 +1,5 @@
 .btn {
-  background-color: #00c023;
+  background-color: #9AE6B4;
   border: none;
   color: rgb(0, 0, 0);
   padding-top: 5px;
@@ -18,28 +18,28 @@
 }
 
 
-.btn--link {
+.btn-link {
   text-decoration: none;
 }
 
 .btn:hover {
-  background-color: #00ff2f;
+  background-color: #68D391;
 }
 
 .btn--secondary {
   color: var(--green);
   border: 1px solid var(--green);
-  background-color: #00c023;
+  background-color: #9AE6B4;
 }
 
-.btn--secondary:hover {
-  background-color: #00ff2f;
+.btn-secondary:hover {
+  background-color: #68D391;
   color: #000000;
 }
 
-.btn--text {
+.btn-text {
   color: #000000;
-  background-color: #00c023;
+  background-color: #9AE6B4;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 24px;
@@ -47,6 +47,6 @@
   min-height: 0;
 }
 
-.btn--text:hover {
-  background-color: #00ff2f;
+.btn-text:hover {
+  background-color: #68D391;
 }

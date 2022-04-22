@@ -1,12 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from '../Navbar';
 
-export default function Layout({ children }) {
+function Layout({ children }) {
   return (
     <div>
       <Navbar />
-
       {children}
     </div>
   )
@@ -15,3 +13,5 @@ export default function Layout({ children }) {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 } 
+
+export default Layout;

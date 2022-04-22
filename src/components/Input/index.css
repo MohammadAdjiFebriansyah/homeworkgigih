@@ -1,6 +1,6 @@
 .input {
     height: 30px;
-    border: 1px solid var(--gray);
+    border: 1px solid #0000;
     padding: 4px 10px;
     width: 90%;
     outline: none;
@@ -9,6 +9,8 @@
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: black;
+    border-radius: 8px;
   }
   
   .input:focus {

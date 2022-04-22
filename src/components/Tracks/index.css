@@ -12,7 +12,8 @@
 }
 
 .song .songImage{
-  width: 13%;
+  margin-top: -5px;
+  width: 23%;
 }
 
 .song .songImage img{
@@ -23,7 +24,7 @@
 .song .songData {
   width: 500px;
   height: 50px;
-  margin-top: -14px;
+  margin-top: -12px;
   margin-left: 10px;
   display: grid;
   color: #fff;
@@ -44,5 +45,5 @@
 
 .song .songAction {
   float: right;
-
+  margin-top: 5px;
 }
