@@ -33,10 +33,10 @@ function PlaylistForm({ uriTracks }) {
 
   const validateForm = () => {
     let isValid = true;
-    if (form.title.length < 5) {
+    if (form.title.length < 10) {
       setErrorForm({
         ...errorForm,
-        title: 'Title must be at least 5 characters long',
+        title: 'Title minimum 10 characters long',
       });
       isValid = false;
     }
@@ -44,7 +44,7 @@ function PlaylistForm({ uriTracks }) {
     if (form.description.length > 100) {
       setErrorForm({
         ...errorForm,
-        description: 'Description must be less than 100 characters long',
+        description: 'Description maximum 100 characters long',
       });
       isValid = false;
     }
